@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clouds Cabañas</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <img src="images/logo.png" alt="Cabañas" />
+
+        <nav>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="cabanas.html">Cabañas</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="tarifas.html">Tarifas y Reservas</a></li>
+            <li><a href="ubicacion.html">Ubicacion</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="contacto">
+      <div class="wrapper">
+        <h1 class="title">Contactanos</h1>
+        <form action="#">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" />
+
+          <label for="email">Email</label>
+          <input type="email" name="email" />
+
+          <label for="telefono">Telefono</label>
+          <input type="tel" name="telefono" />
+
+          <label>Asunto</label>
+          <select name="asunto">
+            <option value="consulta">Consulta</option>
+            <option value="Reserva">Reserva</option>
+            <option value="disponibilidad">Disponibilidad</option>
+            <option value="otro">Otro</option>
+          </select>
+
+          <label for="comentarios">Comentarios:</label>
+          <textarea name="consulta" rows="5">Ingrese sus comentarios</textarea>
+
+          <div id="terminos">
+            <input type="checkbox" name="acepta" id="checkbox-acepta" />
+            <label for="checkbox-acepta">
+              Desea recibir nuestro newsletter?
+            </label>
+          </div>
+
+          <input type="submit" value="Enviar formulario" />
+          <input type="reset" value="Limpiar datos" />
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="wrapper">
+        <img src="images/logo.png" alt="Cabañas" />
+
+        <p>Pagina web por Carolina Maio</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background-color: rgb(159, 87, 43);
+  color: white;
+}
+
+a {
+  color: inherit;
+}
+
+footer {
+  background-color: rgb(159, 87, 43);
+  color: white;
+}
+
+main {
+  background-color: rgb(242, 216, 187);
+}
+
+table {
+  border: 2px solid rgb(131, 72, 35);
+  text-align: center;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid rgb(131, 72, 35);
+}
+
+th {
+  border-bottom: 2px solid rgb(131, 72, 35);
+}
+
+form {
+  display: block;
+}
+
+.title {
+  color: rgb(131, 72, 35);
+  margin-bottom: 24px;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  padding: 10px 0;
+}
+
+header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  height: 80px;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin: 0 16px;
+}
+
+main {
+  padding: 64px 0;
+}
+
+main.no-padding {
+  padding: 0;
+}
+
+footer {
+  text-align: center;
+  padding: 24px 0;
+}
+
+footer img {
+  height: 100px;
+}
+
+.hero img {
+  width: 100%;
+  display: block;
+}
+
+.hero-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero {
+  position: relative;
+}
+
+.servicios-container article {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgba(131, 72, 35, 0.1);
+}
+
+.servicios-container article.right-service {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.servicios-container img {
+  height: 200px;
+}
+
+.servicios-container div {
+  padding: 24px;
+}
+
+.servicios-container h2 {
+  margin-bottom: 16px;
+}
+
+.cabanas-info {
+  border: 1px solid rgb(131, 72, 35);
+  border-radius: 10px;
+  margin-bottom: 24px;
+  padding: 24px;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+  gap: 16px;
+}
+
+.galeria article {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 5px;
+  box-shadow: 0 4px 8px 0 rgba(131, 72, 35, 0.1);
+}
+
+.galeria p {
+  padding: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 7px;
+}
+
+.ubicacion-container {
+  display: flex;
+}
+
+.ubicacion-map {
+  width: 60%;
+  position: relative;
+}
+
+.ubicacion-map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.ubicacion-info {
+  width: 40%;
+  background-color: rgb(159, 87, 43);
+  color: #fff;
+  text-align: center;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.ubicacion-info p {
+  margin-bottom: 16px;
+}
+
+.contacto label {
+  display: block;
+}
+
+.contacto form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.contacto input,
+.contacto select,
+.contacto textarea {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+.contacto #terminos {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contacto #terminos input {
+  width: auto;
+  margin-bottom: 0;
+  margin-right: 6px;
+}
+
+.contacto input[type="submit"] {
+  cursor: pointer;
+  background-color: rgb(159, 87, 43);
+  color: #fff;
+}
+
+.contacto input[type="reset"] {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.tarifas-table {
+  margin-top: 16px;
+}
+
+.tarifas-table td,
+.tarifas-table th {
+  padding: 8px 14px;
+}
