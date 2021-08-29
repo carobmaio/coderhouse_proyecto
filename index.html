@@ -4,30 +4,59 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Clouds Cabañas</title>
   </head>
 
   <body>
     <header>
       <div class="wrapper">
-        <img src="images/logo.png" alt="Cabañas" />
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="images/logo.png" alt="Cabañas Cloud" />
+            </a>
 
-        <nav>
-          <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="cabanas.html">Cabañas</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="tarifas.html">Tarifas y Reservas</a></li>
-            <li><a href="ubicacion.html">Ubicacion</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
+            <button
+              class="navbar-toggler ms-auto"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarContent"
+              aria-controls="navbarContent"
+              aria-expanded="false"
+              aria-label="Abrir Navegación"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+              <ul class="navbar-nav ms-auto">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="cabanas.html">Cabañas</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="tarifas.html">Tarifas y Reservas</a></li>
+                <li><a href="ubicacion.html">Ubicacion</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+              </ul>
+            </div>
+          </div>
         </nav>
       </div>
     </header>
@@ -39,6 +68,98 @@
           <div class="wrapper">
             <h1>Conocé nuestras cálidas cabañas</h1>
             <h2>Donde las experiencias comienzan</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="opciones-viaje">
+        <div class="wrapper">
+          <div class="row align-items-center">
+            <div class="col-md-4 opciones-viaje__accordion-container">
+              <div class="accordion" id="accordion-home">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      Opción Flex
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseOne"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#accordion-home"
+                  >
+                    <div class="accordion-body">
+                      Esta es la opción más flexible, te permite cambiar la
+                      fecha hasta 24hs antes sin penalización a cambio de un
+                      costo adicional.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      Opción Abierta
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingTwo"
+                    data-bs-parent="#accordion-home"
+                  >
+                    <div class="accordion-body">
+                      Con esta opción podés dejar tu estadía abierta y usarla en
+                      el momento que vos elijas, siempre con 7 días de
+                      anticipación y sujeto a disponibilidad.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Opción tradicional
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="#accordion-home"
+                  >
+                    <div class="accordion-body">
+                      Esta opción es la más económica pero no permite cambios de
+                      fecha a menos que sea por restricciones de COVID-19.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-8 opciones-viaje__image-container">
+              <img class="opciones-viaje__img" src="images/home.jpg" alt="" />
+            </div>
           </div>
         </div>
       </div>

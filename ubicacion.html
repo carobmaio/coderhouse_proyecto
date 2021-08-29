@@ -5,28 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clouds Cabañas</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <div class="wrapper">
-        <img src="images/logo.png" alt="Cabañas" />
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="images/logo.png" alt="Cabañas Cloud" />
+            </a>
 
-        <nav>
-          <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="cabanas.html">Cabañas</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="tarifas.html">Tarifas y Reservas</a></li>
-            <li><a href="ubicacion.html">Ubicacion</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
+            <button
+              class="navbar-toggler ms-auto"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarContent"
+              aria-controls="navbarContent"
+              aria-expanded="false"
+              aria-label="Abrir Navegación"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+              <ul class="navbar-nav ms-auto">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="cabanas.html">Cabañas</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="tarifas.html">Tarifas y Reservas</a></li>
+                <li><a href="ubicacion.html">Ubicacion</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+              </ul>
+            </div>
+          </div>
         </nav>
       </div>
     </header>
@@ -35,7 +64,7 @@
         <h1 class="title">Ubicacion</h1>
 
         <div class="ubicacion-container">
-          <div class="ubicacion-map">
+          <div class="ubicacion-container__map">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.024184212271!2d-65.50044804912407!3d-23.746516984515605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ0JzQ3LjUiUyA2NcKwMjknNTMuNyJX!5e0!3m2!1ses!2sar!4v1628299307624!5m2!1ses!2sar"
               width="600"
@@ -46,7 +75,7 @@
             ></iframe>
           </div>
 
-          <div class="ubicacion-info">
+          <div class="ubicacion-container__info">
             <div>
               <h2>Información</h2>
               <p>

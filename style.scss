@@ -5,8 +5,15 @@
   font-family: "Poppins", sans-serif;
 }
 
+$colorPrincipalOscuro: rgb(131, 72, 35);
+$colorPrincipalClaro: rgb(159, 87, 43);
+
+@mixin shadow($alto, $desenfoque) {
+  box-shadow: 0 $alto $desenfoque 0 rgba(131, 72, 35, 0.1);
+}
+
 header {
-  background-color: #9f572b;
+  background-color: $colorPrincipalClaro;
   color: white;
 }
 
@@ -16,27 +23,27 @@ a {
 }
 
 footer {
-  background-color: #9f572b;
+  background-color: $colorPrincipalClaro;
   color: white;
 }
 
 main {
-  background-color: #f2d8bb;
+  background-color: rgb(242, 216, 187);
 }
 
 table {
-  border: 2px solid #834823;
+  border: 2px solid $colorPrincipalOscuro;
   text-align: center;
   border-collapse: collapse;
 }
 
 td,
 th {
-  border: 1px solid #834823;
+  border: 1px solid $colorPrincipalOscuro;
 }
 
 th {
-  border-bottom: 2px solid #834823;
+  border-bottom: 2px solid $colorPrincipalOscuro;
 }
 
 form {
@@ -44,7 +51,7 @@ form {
 }
 
 .title {
-  color: #834823;
+  color: $colorPrincipalOscuro;
   margin-bottom: 24px;
 }
 
@@ -66,13 +73,16 @@ header img {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-8px);
   }
+
   100% {
     transform: translateY(0);
   }
 }
+
 header nav ul {
   margin-bottom: 0;
 }
@@ -135,7 +145,7 @@ footer img {
   overflow: hidden;
   margin-bottom: 16px;
   display: flex;
-  box-shadow: 0 10px 20px 0 rgba(131, 72, 35, 0.1);
+  @include shadow(10px, 20px);
 }
 
 .servicios-container__article--right-service {
@@ -156,7 +166,7 @@ footer img {
 }
 
 .cabanas-info {
-  border: 1px solid #834823;
+  border: 1px solid $colorPrincipalOscuro;
   border-radius: 10px;
   margin-bottom: 24px;
   padding: 24px;
@@ -170,12 +180,14 @@ footer img {
 
 .galeria__image-container {
   overflow: hidden;
-}
-.galeria__image-container img {
-  transition: all 0.2s;
-}
-.galeria__image-container img:hover {
-  transform: scale(1.15);
+
+  img {
+    transition: all 0.2s;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
 }
 
 .galeria__article {
@@ -183,7 +195,7 @@ footer img {
   border-radius: 10px;
   overflow: hidden;
   padding: 5px;
-  box-shadow: 0 4px 8px 0 rgba(131, 72, 35, 0.1);
+  @include shadow(4px, 8px);
 }
 
 .galeria__article--destacado {
@@ -210,15 +222,16 @@ footer img {
 .ubicacion-container__map {
   width: 60%;
   position: relative;
-}
-.ubicacion-container__map iframe {
-  width: 100%;
-  height: 100%;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .ubicacion-container__info {
   width: 40%;
-  background-color: #9f572b;
+  background-color: $colorPrincipalClaro;
   color: #fff;
   text-align: center;
   padding: 32px;
@@ -261,13 +274,13 @@ footer img {
   margin-right: 6px;
 }
 
-.contacto input[type=submit] {
+.contacto input[type="submit"] {
   cursor: pointer;
-  background-color: #9f572b;
+  background-color: $colorPrincipalClaro;
   color: #fff;
 }
 
-.contacto input[type=reset] {
+.contacto input[type="reset"] {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.2);
 }
@@ -276,21 +289,26 @@ footer img {
   margin-top: 16px;
 }
 
-.temp-media, .temp-baja, .temp-alta {
+$temp-alta: rgb(99, 30, 30);
+$temp-baja: rgb(23, 87, 23);
+$temp-media: rgb(75, 75, 17);
+
+%temp {
   font-style: italic;
   font-weight: bold;
 }
 
 .temp-alta {
-  color: #631e1e;
+  @extend %temp;
+  color: $temp-alta;
 }
-
 .temp-baja {
-  color: #175717;
+  @extend %temp;
+  color: $temp-baja;
 }
-
 .temp-media {
-  color: #4b4b11;
+  @extend %temp;
+  color: $temp-media;
 }
 
 .tarifas-table td,
@@ -307,21 +325,22 @@ footer img {
   margin-right: 1rem;
   background-color: #fff;
   padding: 10px;
-}
-.temporadas__temporada h2 {
-  font-size: 1.45rem;
+
+  h2 {
+    font-size: 1.45rem;
+  }
 }
 
-.temporadas__temporada-alta {
-  background-color: #ff0000;
-}
+$temporadas: (
+  alta: #ff0000,
+  baja: #008000,
+  media: #ffff00,
+);
 
-.temporadas__temporada-baja {
-  background-color: #008000;
-}
-
-.temporadas__temporada-media {
-  background-color: #ffff00;
+@each $temp, $color in $temporadas {
+  .temporadas__temporada-#{$temp} {
+    background-color: $color;
+  }
 }
 
 .temporadas__temporada-oscuro {
@@ -367,10 +386,8 @@ footer img {
   }
 
   .ubicacion-info,
-.ubicacion-map {
+  .ubicacion-map {
     width: 100%;
     width: 100%;
   }
 }
-
-/*# sourceMappingURL=style.css.map */

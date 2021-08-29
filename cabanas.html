@@ -5,28 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clouds Cabañas</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <div class="wrapper">
-        <img src="images/logo.png" alt="Cabañas" />
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="images/logo.png" alt="Cabañas Cloud" />
+            </a>
 
-        <nav>
-          <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="cabanas.html">Cabañas</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="tarifas.html">Tarifas y Reservas</a></li>
-            <li><a href="ubicacion.html">Ubicacion</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
+            <button
+              class="navbar-toggler ms-auto"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarContent"
+              aria-controls="navbarContent"
+              aria-expanded="false"
+              aria-label="Abrir Navegación"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+              <ul class="navbar-nav ms-auto">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="cabanas.html">Cabañas</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="tarifas.html">Tarifas y Reservas</a></li>
+                <li><a href="ubicacion.html">Ubicacion</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+              </ul>
+            </div>
+          </div>
         </nav>
       </div>
     </header>
@@ -49,30 +78,105 @@
           </div>
         </section>
 
+        <div class="carousel-container-cabanas">
+          <div
+            id="carouselExampleControls"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="images/cabanas/slider/1.jpeg"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/cabanas/slider/2.jpeg"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/cabanas/slider/3.jpeg"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/cabanas/slider/4.jpeg"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
         <section class="galeria">
-          <article>
-            <img src="images/cabanas/bano.jpg" alt="Baños" />
-            <p>Baños</p>
+          <article class="galeria__article">
+            <div class="galeria__image-container">
+              <img src="images/cabanas/bano.jpg" alt="Baños" />
+            </div>
+            <p class="galeria__text">Baños</p>
           </article>
-          <article>
-            <img src="images/cabanas/bodega.jpg" alt="Bodega" />
-            <p>Bodega</p>
+          <article class="galeria__article galeria__article--destacado">
+            <div class="galeria__image-container">
+              <img src="images/cabanas/bodega.jpg" alt="Bodega" />
+            </div>
+            <p class="galeria__text">Bodega</p>
           </article>
-          <article>
-            <img src="images/cabanas/desayunador.jpg" alt="Desayunador" />
-            <p>Desayunador</p>
+          <article class="galeria__article">
+            <div class="galeria__image-container">
+              <img src="images/cabanas/desayunador.jpg" alt="Desayunador" />
+            </div>
+            <p class="galeria__text">Desayunador</p>
           </article>
-          <article>
-            <img src="images/cabanas/exterior.jpg" alt="Exterior" />
-            <p>Exterior</p>
+          <article class="galeria__article">
+            <div class="galeria__image-container">
+              <img src="images/cabanas/exterior.jpg" alt="Exterior" />
+            </div>
+            <p class="galeria__text">Exterior</p>
           </article>
-          <article>
-            <img src="images/cabanas/habitacion.jpg" alt="Habitaciones" />
-            <p>Habitaciones</p>
+          <article class="galeria__article">
+            <div class="galeria__image-container">
+              <img src="images/cabanas/habitacion.jpg" alt="Habitaciones" />
+            </div>
+            <p class="galeria__text">Habitaciones</p>
           </article>
-          <article>
-            <img src="images/cabanas/piscina.jpg" alt="Piscina" />
-            <p>Piscina</p>
+          <article class="galeria__article">
+            <div class="galeria__image-container">
+              <img src="images/cabanas/piscina.jpg" alt="Piscina" />
+            </div>
+            <p class="galeria__text">Piscina</p>
           </article>
         </section>
       </div>
