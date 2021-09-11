@@ -1,0 +1,24 @@
+{
+  "name": "proyecto-final-carolina-maio",
+  "version": "1.0.0",
+  "description": "4ta Entrega Proyecto Final - Carolina Maio - Curso de Front End de Coderhouse.",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "node-sass -o css scss",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carobmaio/coderhouse_proyecto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carobmaio/coderhouse_proyecto/issues"
+  },
+  "homepage": "https://github.com/carobmaio/coderhouse_proyecto#readme",
+  "devDependencies": {
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.12"
+  }
+}
