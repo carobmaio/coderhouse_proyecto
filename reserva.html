@@ -12,7 +12,7 @@
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contacto - Clouds Cabañas</title>
+    <title>Reservá - Clouds Cabañas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -68,79 +68,11 @@
         </nav>
       </div>
     </header>
-    <main class="contacto">
+    <main>
       <div class="wrapper">
-        <h1 class="title">Contactanos</h1>
-        <form action="#">
-          <label for="nombre">Nombre</label>
-          <input type="text" name="nombre" />
+        <h1 class="title">Reservá</h1>
 
-          <label for="email">Email</label>
-          <input type="email" name="email" />
-
-          <label for="telefono">Telefono</label>
-          <input type="tel" name="telefono" />
-
-          <label>Asunto</label>
-          <select name="asunto">
-            <option value="consulta">Consulta</option>
-            <option value="Reserva">Reserva</option>
-            <option value="disponibilidad">Disponibilidad</option>
-            <option value="otro">Otro</option>
-          </select>
-
-          <label for="comentarios">Comentarios:</label>
-          <textarea name="consulta" rows="5">Ingrese sus comentarios</textarea>
-
-          <div id="terminos">
-            <input type="checkbox" name="acepta" id="checkbox-acepta" />
-            <label for="checkbox-acepta">
-              Desea recibir nuestro newsletter?
-            </label>
-          </div>
-
-          <input
-            type="submit"
-            value="Enviar formulario"
-            data-bs-toggle="modal"
-            data-bs-target="#contacto-modal"
-          />
-          <input type="reset" value="Limpiar datos" />
-        </form>
-      </div>
-
-      <div
-        class="modal fade"
-        id="contacto-modal"
-        tabindex="-1"
-        aria-labelledby="contactoModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="contactoModalLabel">
-                Gracias por enviar su mensaje
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">Le responderemos a la brevedad.</div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Cerrar
-              </button>
-            </div>
-          </div>
-        </div>
+        <script src="js/reserva.js"></script>
       </div>
     </main>
     <footer>

@@ -58,17 +58,29 @@ header img {
     transform: translateY(0); } }
 
 header nav ul {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  display: flex;
+  align-items: center; }
 
 header nav ul li {
-  display: inline-block;
   margin: 0 16px; }
+
+header nav ul li.highlight {
+  background-color: #fff;
+  color: #6f390a;
+  border-radius: 5px; }
+  header nav ul li.highlight a {
+    padding: 6px 12px;
+    display: inline-block; }
 
 header nav ul li a {
   transition: all 0.2s; }
 
 header nav ul li a:hover {
   color: rgba(255, 255, 255, 0.7); }
+
+header nav ul li.highlight a:hover {
+  color: #6f390a; }
 
 main {
   padding: 64px 0; }
