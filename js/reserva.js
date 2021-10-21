@@ -104,13 +104,7 @@ class Reserva {
 }
 
 // Al elegir una habitacion luego de la busqueda se va a crear una reserva
-const reserva = new Reserva(
-  "15/03/2022",
-  "25/03/2022",
-  4,
-  "Cuadruple Deluxe",
-  112390
-);
+/* const reserva = new Reserva("15/03/2022", "25/03/2022", 4, "Cuadruple Deluxe");
 
 // Al hacer click en "Confirmar reserva", se confirmara la misma
 reserva.confirmar();
@@ -123,6 +117,23 @@ reserva.modificarDia("15/03/2022", "27/03/2022");
 reserva.modificarHabitacion("Cuadruple Simple");
 
 //Si el usuario desea cancelar la reserva, puede hacerlo con un boton
-reserva.cancelarReserva();
+reserva.cancelarReserva(); */
 
-console.log(reserva);
+let finalizar = false;
+const reservas = [];
+
+while (!finalizar) {
+  const fechaInicio = prompt("Ingrese la fecha de llegada (DD/MM/AAAA)");
+  const fechaFin = prompt("Ingrese la fecha de salida (DD/MM/AAAA)");
+  const personas = parseInt(prompt("Ingrese la cantidad de pasajeros"));
+  const habitacion = prompt(
+    "Ingrese que habitacion prefiere, opciones: Simple, Doble, Triple o Cuadruple"
+  );
+
+  reservas.push(new Reserva(fechaInicio, fechaFin, personas, habitacion));
+
+  finalizar =
+    prompt("Desea continuar agregando reservas? Opciones: SI, NO") === "NO";
+}
+
+console.table(reservas);
