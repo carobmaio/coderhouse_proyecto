@@ -51,7 +51,7 @@ alert(mensaje);
 */
 
 //aca se calcularia el costo con el servidor...
-const calcularCosto = (fechaInicio, fechaFin, tipoHabitacion) => {
+/* const calcularCosto = (fechaInicio, fechaFin, tipoHabitacion) => {
   return 112000;
 };
 
@@ -101,7 +101,7 @@ class Reserva {
   cancelarReserva() {
     this.estado = "Cancelada";
   }
-}
+} */
 
 // Al elegir una habitacion luego de la busqueda se va a crear una reserva
 /* const reserva = new Reserva("15/03/2022", "25/03/2022", 4, "Cuadruple Deluxe");
@@ -118,11 +118,11 @@ reserva.modificarHabitacion("Cuadruple Simple");
 
 //Si el usuario desea cancelar la reserva, puede hacerlo con un boton
 reserva.cancelarReserva(); */
-
+/* 
 let finalizar = false;
-const reservas = [];
+const reservas = []; */
 
-while (!finalizar) {
+/* while (!finalizar) {
   const fechaInicio = prompt("Ingrese la fecha de llegada (DD/MM/AAAA)");
   const fechaFin = prompt("Ingrese la fecha de salida (DD/MM/AAAA)");
   const personas = parseInt(prompt("Ingrese la cantidad de pasajeros"));
@@ -134,6 +134,95 @@ while (!finalizar) {
 
   finalizar =
     prompt("Desea continuar agregando reservas? Opciones: SI, NO") === "NO";
-}
+} */
 
-console.table(reservas);
+const noches = 6;
+const resultados = [
+  {
+    tipoHabitacion: "Simple",
+    precioPorNoche: 4200,
+    descripcion: "Habitación simple con vista al Jardín",
+    caracteristicas: [
+      "Desayuno incluído",
+      "1 cama doble",
+      "Baño con hidromasaje",
+      "Regalo de bienvenida",
+    ],
+  },
+  {
+    tipoHabitacion: "Doble",
+    precioPorNoche: 5400,
+    descripcion: "Habitación doble con vista al montaña",
+    caracteristicas: [
+      "Desayuno incluído",
+      "1 cama doble y 1 simple",
+      "Baño con hidromasaje",
+      "Vista a la montaña",
+      "Regalo de bienvenida",
+    ],
+  },
+  {
+    tipoHabitacion: "Triple",
+    precioPorNoche: 6800,
+    descripcion: "Habitación triple con vista al montaña",
+    caracteristicas: [
+      "Desayuno incluído",
+      "1 cama doble y 3 simples",
+      "Baño con hidromasaje",
+      "Vista a la montaña",
+      "Regalo de bienvenida",
+      "PlayStation 5 y TV de 60'",
+      "WIFI Gratis",
+    ],
+  },
+  {
+    tipoHabitacion: "Cuadruple",
+    precioPorNoche: 9900,
+    descripcion: "Habitación cuadruple con vista al montaña",
+    caracteristicas: [
+      "Desayuno incluído",
+      "1 cama doble y 3 simples",
+      "Baño con hidromasaje",
+      "Vista a la montaña",
+      "Regalo de bienvenida",
+      "PlayStation 5 y TV de 60'",
+      "WIFI Gratis",
+      "Secador de pelo",
+    ],
+  },
+];
+
+for (resultado of resultados) {
+  const div = document.createElement("div");
+  div.className = "resultado-reserva";
+
+  let caracteristicas = "";
+
+  for (caracteristica of resultado.caracteristicas) {
+    caracteristicas += `<li>${caracteristica}</li>`;
+  }
+
+  div.innerHTML = `
+    <div class="resultado-reserva-header">
+      <div class="resultado-reserva-info">
+        <h3>Habitación ${resultado.tipoHabitacion}</h3>
+        <p>${resultado.descripcion}</p>
+      </div>
+      <div class="resultado-reserva-precios">
+        <p>Precio para ${noches} noches: <span class="precio-final">$ ${
+    resultado.precioPorNoche * noches
+  }</span></p>
+
+        <span>Precio por noche: $ ${resultado.precioPorNoche}</span>
+      </div>
+    </div>
+
+    <div class="resultado-reserva-caracteristicas">
+      <ul>
+        ${caracteristicas}
+      </ul>
+    </div>
+  `;
+
+  document.getElementById("reserva-resultados").appendChild(div);
+}

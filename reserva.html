@@ -72,6 +72,36 @@
       <div class="wrapper">
         <h1 class="title">Reservá</h1>
 
+        <div class="reserva-form">
+          <div class="reserva-form-inputs">
+            <div class="reservas-form-input-container">
+              <label>Fecha llegada</label>
+              <input type="date" name="fecha_llegada" />
+            </div>
+            <div class="reservas-form-input-container">
+              <label>Fecha salida</label>
+              <input type="date" name="fecha_salida" />
+            </div>
+            <div class="reservas-form-input-container">
+              <label>Cantidad de pasajeros</label>
+              <input type="number" name="cantidad_pax" />
+            </div>
+            <div class="reservas-form-input-container">
+              <label>Habitación</label>
+              <select name="habitacion">
+                <option value="Simple">Simple</option>
+                <option value="Doble">Doble</option>
+                <option value="Triple">Triple</option>
+                <option value="Cuadruple">Cuádruple</option>
+              </select>
+            </div>
+
+            <button id="buscar-reserva">Buscar...</button>
+          </div>
+        </div>
+
+        <div id="reserva-resultados"></div>
+
         <script src="js/reserva.js"></script>
       </div>
     </main>

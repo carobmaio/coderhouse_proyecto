@@ -293,6 +293,53 @@ footer img {
   width: 100%;
   border-radius: 10px; }
 
+.reserva-form {
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #6f390a; }
+  .reserva-form button {
+    background-color: #6f390a;
+    color: #fff;
+    padding: 5px 18px;
+    border-radius: 5px;
+    border: none; }
+
+.reserva-form-inputs {
+  display: flex; }
+
+.reservas-form-input-container {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem; }
+  .reservas-form-input-container label {
+    margin-right: 10px; }
+
+#reserva-resultados {
+  margin-top: 4rem; }
+
+.resultado-reserva {
+  border-radius: 10px;
+  background-color: rgba(111, 57, 10, 0.7);
+  border: 2px solid #6f390a;
+  color: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem; }
+
+.resultado-reserva-header {
+  display: flex;
+  justify-content: space-between; }
+
+.resultado-reserva-precios {
+  text-align: right; }
+  .resultado-reserva-precios p {
+    margin-bottom: 0; }
+
+.resultado-reserva-caracteristicas {
+  margin-top: 1.5rem; }
+
+.precio-final {
+  font-size: 28px; }
+
 @media screen and (max-width: 1100px) {
   .servicios-container__img-mobile {
     display: block;
