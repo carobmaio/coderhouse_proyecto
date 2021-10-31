@@ -136,7 +136,6 @@ const reservas = []; */
     prompt("Desea continuar agregando reservas? Opciones: SI, NO") === "NO";
 } */
 
-const noches = 6;
 const resultados = [
   {
     tipoHabitacion: "Simple",
@@ -192,17 +191,24 @@ const resultados = [
   },
 ];
 
-for (resultado of resultados) {
-  const div = document.createElement("div");
-  div.className = "resultado-reserva";
+const mostrarResultados = (noches, habitacion) => {
+  const habitacionFiltrada = resultados.filter(
+    (hab) => hab.tipoHabitacion === habitacion
+  );
 
-  let caracteristicas = "";
+  document.getElementById("reserva-resultados").innerHTML = "";
 
-  for (caracteristica of resultado.caracteristicas) {
-    caracteristicas += `<li>${caracteristica}</li>`;
-  }
+  for (resultado of habitacionFiltrada) {
+    const div = document.createElement("div");
+    div.className = "resultado-reserva";
 
-  div.innerHTML = `
+    let caracteristicas = "";
+
+    for (caracteristica of resultado.caracteristicas) {
+      caracteristicas += `<li>${caracteristica}</li>`;
+    }
+
+    div.innerHTML = `
     <div class="resultado-reserva-header">
       <div class="resultado-reserva-info">
         <h3>Habitación ${resultado.tipoHabitacion}</h3>
@@ -210,8 +216,8 @@ for (resultado of resultados) {
       </div>
       <div class="resultado-reserva-precios">
         <p>Precio para ${noches} noches: <span class="precio-final">$ ${
-    resultado.precioPorNoche * noches
-  }</span></p>
+      resultado.precioPorNoche * noches
+    }</span></p>
 
         <span>Precio por noche: $ ${resultado.precioPorNoche}</span>
       </div>
@@ -224,5 +230,28 @@ for (resultado of resultados) {
     </div>
   `;
 
-  document.getElementById("reserva-resultados").appendChild(div);
-}
+    document.getElementById("reserva-resultados").appendChild(div);
+  }
+};
+
+const calcularDiasEntreDosFechas = (fecha1, fecha2) =>
+  Math.abs(
+    Math.ceil((fecha1.getTime() - fecha2.getTime()) / (1000 * 3600 * 24))
+  );
+
+const submitFormulario = (e) => {
+  e.preventDefault();
+
+  const fechaInicio = new Date(document.getElementById("fecha_llegada").value);
+  const fechaFin = new Date(document.getElementById("fecha_salida").value);
+  const cantidadPax = parseInt(document.getElementById("cantidad_pax").value);
+  const habitacion = document.getElementById("habitacion").value;
+
+  const dias = calcularDiasEntreDosFechas(fechaInicio, fechaFin);
+
+  mostrarResultados(dias, habitacion);
+};
+
+document
+  .getElementById("formulario-reserva")
+  .addEventListener("submit", submitFormulario);
