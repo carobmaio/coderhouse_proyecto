@@ -239,15 +239,35 @@ const calcularDiasEntreDosFechas = (fecha1, fecha2) =>
     Math.ceil((fecha1.getTime() - fecha2.getTime()) / (1000 * 3600 * 24))
   );
 
+const inputLlegada = document.getElementById("fecha_llegada");
+const inputSalida = document.getElementById("fecha_salida");
+const inputPax = document.getElementById("cantidad_pax");
+const inputHabitacion = document.getElementById("habitacion");
+
 const submitFormulario = (e) => {
   e.preventDefault();
 
-  const fechaInicio = new Date(document.getElementById("fecha_llegada").value);
-  const fechaFin = new Date(document.getElementById("fecha_salida").value);
-  const cantidadPax = parseInt(document.getElementById("cantidad_pax").value);
-  const habitacion = document.getElementById("habitacion").value;
+  const fechaInicio = inputLlegada.value;
+  const fechaFin = inputSalida.value;
+  const cantidadPax = inputPax.value;
+  const habitacion = inputHabitacion.value;
 
-  const dias = calcularDiasEntreDosFechas(fechaInicio, fechaFin);
+  // guardar en el localstorage:
+
+  localStorage.setItem(
+    "formData",
+    JSON.stringify({
+      fechaInicio,
+      fechaFin,
+      cantidadPax,
+      habitacion,
+    })
+  );
+
+  const dias = calcularDiasEntreDosFechas(
+    new Date(fechaInicio),
+    new Date(fechaFin)
+  );
 
   mostrarResultados(dias, habitacion);
 };
@@ -255,3 +275,12 @@ const submitFormulario = (e) => {
 document
   .getElementById("formulario-reserva")
   .addEventListener("submit", submitFormulario);
+
+if (localStorage.getItem("formData")) {
+  const formData = JSON.parse(localStorage.getItem("formData"));
+
+  inputLlegada.value = formData.fechaInicio;
+  inputSalida.value = formData.fechaFin;
+  inputPax.value = formData.cantidadPax;
+  inputHabitacion.value = formData.habitacion;
+}

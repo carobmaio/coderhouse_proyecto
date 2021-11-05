@@ -340,6 +340,27 @@ footer img {
 .precio-final {
   font-size: 28px; }
 
+#cantidad_pax {
+  width: 50px; }
+
+@media screen and (max-width: 1366px) {
+  .reserva-form-inputs {
+    display: grid;
+    gap: 26px;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .reserva-form button {
+    width: 200px;
+    display: block; }
+  .reservas-form-input-container {
+    margin-right: 0; }
+    .reservas-form-input-container label {
+      margin-right: 1rem;
+      width: 300px; }
+    .reservas-form-input-container select,
+    .reservas-form-input-container #cantidad_pax,
+    .reservas-form-input-container input {
+      width: 100%; } }
+
 @media screen and (max-width: 1100px) {
   .servicios-container__img-mobile {
     display: block;
@@ -367,7 +388,13 @@ footer img {
     width: 100%;
     width: 100%; } }
 
+@media screen and (max-width: 970px) {
+  .reserva-form-inputs {
+    grid-template-columns: minmax(0, 1fr); } }
+
 @media screen and (max-width: 600px) {
+  .reservas-form-input-container {
+    display: block; }
   footer img {
     height: auto;
     width: 80%; }
