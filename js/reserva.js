@@ -196,41 +196,40 @@ const mostrarResultados = (noches, habitacion) => {
     (hab) => hab.tipoHabitacion === habitacion
   );
 
-  document.getElementById("reserva-resultados").innerHTML = "";
+  $("#reserva-resultados").innerHTML = "";
 
   for (resultado of habitacionFiltrada) {
-    const div = document.createElement("div");
-    div.className = "resultado-reserva";
-
     let caracteristicas = "";
 
     for (caracteristica of resultado.caracteristicas) {
       caracteristicas += `<li>${caracteristica}</li>`;
     }
 
-    div.innerHTML = `
-    <div class="resultado-reserva-header">
-      <div class="resultado-reserva-info">
-        <h3>Habitación ${resultado.tipoHabitacion}</h3>
-        <p>${resultado.descripcion}</p>
-      </div>
-      <div class="resultado-reserva-precios">
-        <p>Precio para ${noches} noches: <span class="precio-final">$ ${
+    const div = `
+    <div class="resultado-reserva">
+      <div class="resultado-reserva-header">
+        <div class="resultado-reserva-info">
+          <h3>Habitación ${resultado.tipoHabitacion}</h3>
+          <p>${resultado.descripcion}</p>
+        </div>
+        <div class="resultado-reserva-precios">
+          <p>Precio para ${noches} noches: <span class="precio-final">$ ${
       resultado.precioPorNoche * noches
     }</span></p>
 
-        <span>Precio por noche: $ ${resultado.precioPorNoche}</span>
+          <span>Precio por noche: $ ${resultado.precioPorNoche}</span>
+        </div>
       </div>
-    </div>
 
-    <div class="resultado-reserva-caracteristicas">
-      <ul>
-        ${caracteristicas}
-      </ul>
+      <div class="resultado-reserva-caracteristicas">
+        <ul>
+          ${caracteristicas}
+        </ul>
+      </div>
     </div>
   `;
 
-    document.getElementById("reserva-resultados").appendChild(div);
+    $("#reserva-resultados").append(div);
   }
 };
 
@@ -239,10 +238,10 @@ const calcularDiasEntreDosFechas = (fecha1, fecha2) =>
     Math.ceil((fecha1.getTime() - fecha2.getTime()) / (1000 * 3600 * 24))
   );
 
-const inputLlegada = document.getElementById("fecha_llegada");
-const inputSalida = document.getElementById("fecha_salida");
-const inputPax = document.getElementById("cantidad_pax");
-const inputHabitacion = document.getElementById("habitacion");
+const inputLlegada = $("#fecha_llegada");
+const inputSalida = $("#fecha_salida");
+const inputPax = $("#cantidad_pax");
+const inputHabitacion = $("#habitacion");
 
 const submitFormulario = (e) => {
   e.preventDefault();
@@ -272,15 +271,13 @@ const submitFormulario = (e) => {
   mostrarResultados(dias, habitacion);
 };
 
-document
-  .getElementById("formulario-reserva")
-  .addEventListener("submit", submitFormulario);
+$("#formulario-reserva").on("submit", submitFormulario);
 
 if (localStorage.getItem("formData")) {
   const formData = JSON.parse(localStorage.getItem("formData"));
 
-  inputLlegada.value = formData.fechaInicio;
-  inputSalida.value = formData.fechaFin;
-  inputPax.value = formData.cantidadPax;
-  inputHabitacion.value = formData.habitacion;
+  inputLlegada.val(formData.fechaInicio);
+  inputSalida.val(formData.fechaFin);
+  inputPax.val(formData.cantidadPax);
+  inputHabitacion.val(formData.habitacion);
 }
