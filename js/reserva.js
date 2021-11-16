@@ -136,6 +136,14 @@ const reservas = []; */
     prompt("Desea continuar agregando reservas? Opciones: SI, NO") === "NO";
 } */
 
+function generarNumeroAleatorio(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function generarNumeroAleatorioDecimal(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
 const resultados = [
   {
     tipoHabitacion: "Simple",
@@ -196,9 +204,26 @@ const mostrarResultados = (noches, habitacion) => {
     (hab) => hab.tipoHabitacion === habitacion
   );
 
+  const datos = [...habitacionFiltrada];
+
+  for (let i = 0; i < generarNumeroAleatorio(2, 4); i++) {
+    const nueva = {
+      ...habitacionFiltrada[0],
+      precioPorNoche: Math.round(
+        habitacionFiltrada[0].precioPorNoche +
+          habitacionFiltrada[0].precioPorNoche *
+            generarNumeroAleatorioDecimal(0.03, 0.25)
+      ),
+    };
+
+    datos.push(nueva);
+  }
+
+  datos.sort((a, b) => a.precioPorNoche - b.precioPorNoche);
+
   $("#reserva-resultados").innerHTML = "";
 
-  for (resultado of habitacionFiltrada) {
+  for (resultado of datos) {
     let caracteristicas = "";
 
     for (caracteristica of resultado.caracteristicas) {
@@ -226,10 +251,12 @@ const mostrarResultados = (noches, habitacion) => {
           ${caracteristicas}
         </ul>
       </div>
+
+      <button class="reserva-button">Reservar</button>
     </div>
   `;
 
-    $("#reserva-resultados").append(div);
+    $(div).appendTo("#reserva-resultados").slideDown();
   }
 };
 
@@ -281,3 +308,9 @@ if (localStorage.getItem("formData")) {
   inputPax.val(formData.cantidadPax);
   inputHabitacion.val(formData.habitacion);
 }
+
+$(document).on("click", ".reserva-button", function () {
+  $(".reserva-form, #reserva-resultados").fadeOut(function () {
+    $(".reserva-completa").fadeIn();
+  });
+});
