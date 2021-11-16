@@ -246,10 +246,10 @@ const inputHabitacion = $("#habitacion");
 const submitFormulario = (e) => {
   e.preventDefault();
 
-  const fechaInicio = inputLlegada.value;
-  const fechaFin = inputSalida.value;
-  const cantidadPax = inputPax.value;
-  const habitacion = inputHabitacion.value;
+  const fechaInicio = inputLlegada.val();
+  const fechaFin = inputSalida.val();
+  const cantidadPax = inputPax.val();
+  const habitacion = inputHabitacion.val();
 
   // guardar en el localstorage:
 
